@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  AbertDemo
+//
+//  Created by rp.wang on 2017/4/25.
+//  Copyright © 2017年 兰州北科维拓科技股份有限公司. All rights reserved.
+//  预编译文件
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "PublicViewModel.h"
+#import "Header.h"
+
+enum{
+    WKNetworkOK = 200,
+    WKNetworkTimeout = -1001,
+    WKNetworkCannotConnectServer = -1004,
+    WKNetworkConnectionLost = -1005,
+    WKNertworkNotConnectInternet = -1009,
+    WKTokenTimeOut = -1111
+};
+
+enum DebigOrFormalenvironment{
+    //测试环境
+    Debugenvironment = 100,
+    //正式环境
+    Formalenvironment = 101
+};
+typedef enum DebigOrFormalenvironment debigOrFormalenvironment;
+
+
+#endif /* PrefixHeader_pch */
