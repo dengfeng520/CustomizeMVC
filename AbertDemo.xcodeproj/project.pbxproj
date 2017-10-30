@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4F08601FA72861008DF644 /* MyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4F085F1FA72861008DF644 /* MyTabBar.m */; };
 		1CDC0FF51EADAB5E00D7635C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC0FF41EADAB5E00D7635C /* main.m */; };
 		1CDC0FF81EADAB5E00D7635C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC0FF71EADAB5E00D7635C /* AppDelegate.m */; };
 		1CDC0FFB1EADAB5E00D7635C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC0FFA1EADAB5E00D7635C /* ViewController.m */; };
@@ -229,6 +230,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4F085E1FA72861008DF644 /* MyTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTabBar.h; sourceTree = "<group>"; };
+		1C4F085F1FA72861008DF644 /* MyTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBar.m; sourceTree = "<group>"; };
 		1CDC0FF01EADAB5E00D7635C /* AbertDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbertDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDC0FF41EADAB5E00D7635C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1CDC0FF61EADAB5E00D7635C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -958,6 +961,8 @@
 				1CDC11C71EAEEF2500D7635C /* RootNavViewController.m */,
 				1CDC13F71EAF164D00D7635C /* UINavigationController+YNBase.h */,
 				1CDC13F81EAF164D00D7635C /* UINavigationController+YNBase.m */,
+				1C4F085E1FA72861008DF644 /* MyTabBar.h */,
+				1C4F085F1FA72861008DF644 /* MyTabBar.m */,
 			);
 			path = MaintabBarView;
 			sourceTree = "<group>";
@@ -1645,6 +1650,7 @@
 				1CDC13CA1EAEFD5000D7635C /* GPUImageSolidColorGenerator.m in Sources */,
 				1CDC11831EADAE0600D7635C /* SecondModel.m in Sources */,
 				1CDC135F1EAEFD5000D7635C /* GPUImageColorInvertFilter.m in Sources */,
+				1C4F08601FA72861008DF644 /* MyTabBar.m in Sources */,
 				1CDC139D1EAEFD5000D7635C /* GPUImageMedianFilter.m in Sources */,
 				1CDC13D21EAEFD5000D7635C /* GPUImageTextureOutput.m in Sources */,
 				1CDC139B1EAEFD5000D7635C /* GPUImageLuminosityBlendFilter.m in Sources */,

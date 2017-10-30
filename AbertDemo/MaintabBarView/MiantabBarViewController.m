@@ -11,6 +11,7 @@
 #import "BaseViewController.h"
 #import "UIView+Util.h"
 #import "DataManager.h"
+#import "MyTabBar.h"
 
 @interface MiantabBarViewController ()
 
@@ -114,5 +115,7 @@
     UINavigationController *navigationController = (UINavigationController *)self.selectedViewController;
     [navigationController pushViewController:LoginView animated:YES];
 }
+
+
 
 @end
