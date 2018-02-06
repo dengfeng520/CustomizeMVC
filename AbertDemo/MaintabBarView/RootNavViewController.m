@@ -26,7 +26,6 @@
     self.navigationBar.barTintColor = UIColorFromRGB(0xFF8799);
     self.view.backgroundColor = [UIColor whiteColor];
     
-
 }
 
 - (void)didReceiveMemoryWarning {

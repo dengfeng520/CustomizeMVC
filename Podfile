@@ -9,6 +9,8 @@ pod 'MJExtension'
 pod 'AFNetworking', '~> 3.0'
 pod 'IQKeyboardManager'
 pod 'SDCycleScrollView'
+pod 'GPUImage'
+pod 'Masonry'
 end
 target 'AbertDemo' do
     pods
