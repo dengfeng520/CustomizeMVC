@@ -15,7 +15,10 @@
 
 @interface MiantabBarViewController ()
 
+///
 @property (nonatomic, strong) UIButton *centerButton;
+///
+@property (assign, nonatomic) int indexFlag;
 
 @end
 
@@ -58,14 +61,16 @@
     }];
     [self.tabBar.items[2] setEnabled:NO];
     [self addCenterButtonWithImage:[UIImage imageNamed:@"shouye_icon_tianjia"]];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorFromRGB(0xFFFFFF)} forState:UIControlStateSelected];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorFromRGB(0xFFFFFF)} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.5f],NSForegroundColorAttributeName:UIColorFromRGB(0xFFFFFF)} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.5f],NSForegroundColorAttributeName:UIColorFromRGB(0xFFFFFF)} forState:UIControlStateNormal];
     [self.tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"shouye_image_caidan"]];
     [self.tabBar setBarTintColor:UIColorFromRGB(0xFF8799)];
     self.tabBar.shadowImage = [[UIImage alloc] init];
     self.tabBar.backgroundImage = [[UIImage alloc] init];
     self.tabBar.translucent = NO;
     //--------------------------------
+    
+    _indexFlag = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,6 +121,37 @@
     [navigationController pushViewController:LoginView animated:YES];
 }
 
-
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    //防止Block循环引用
+    __weak typeof (self) weakSelf = self;
+    NSInteger index = [self.tabBar.items indexOfObject:item];
+    if (index != _indexFlag) {
+        //执行动画
+        NSMutableArray *arry = [NSMutableArray array];
+        for (UIView *btn in self.tabBar.subviews) {
+            if ([btn isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+                [arry addObject:btn];
+            }
+        }
+        //添加动画
+        //放大效果，并回到原位
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        //速度控制函数，控制动画运行的节奏
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        //执行时间
+        animation.duration = 0.1;
+        //执行次数
+        animation.repeatCount = 1;
+        //完成动画后会回到执行动画之前的状态
+        animation.autoreverses = YES;
+        //初始伸缩倍数
+        animation.fromValue = [NSNumber numberWithFloat:1.0];
+        //结束伸缩倍数
+        animation.toValue = [NSNumber numberWithFloat:0.8];
+        [[arry[index] layer] addAnimation:animation forKey:nil];
+        weakSelf.indexFlag = (int)index;
+    }
+}
 
 @end
